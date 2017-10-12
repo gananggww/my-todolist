@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script>
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
+    <title>Todo or not</title>
+  </head>
+  <body>
+    <div id="app" class="ui container ">
+      <br>
+      <h1>TODO</h1>
+      <p>for not wasting your time</p>
+      <br>
+      <div class="ui top attached tabular menu">
+        <a class="item active" data-tab="first">Masuk</a>
+        <a class="item" data-tab="second">Daftar</a>
+      </div>
+      <div class="ui bottom attached tab segment active" data-tab="first">
+        <!-- FORM LOGIN  -->
+        <form class="ui form">
+          <div class="field">
+            <label>Username</label>
+            <input type="text" v-model="login.username" placeholder="Masukin username bro">
+          </div>
+          <div class="field">
+            <label>Password</label>
+            <input type="password" v-model=login.password placeholder="Masukin password bro">
+          </div>
+          <button class="ui blue button" type="button" v-on:click="getLogin()">Silahkan masuk bro</button>
+        </form>
+        <!--  -->
+      </div>
+      <div class="ui bottom attached tab segment" data-tab="second">
+        <!-- Form Register -->
+        <form class="ui form">
+          <div class="field">
+            <label>Username</label>
+            <input type="text" v-model="register.username" placeholder="Masukin username agan">
+          </div>
+          <div class="field">
+            <label>Password</label>
+            <input type="password" v-model="register.password" placeholder="Masukin password agan">
+          </div>
+          <!-- <div class="field">
+            <label>No Telepon</label>
+            <input type="text" v-model="register" placeholder="Masukin nomer hape agan">
+          </div> -->
+          <button class="ui blue button" type="submit" v-on:click="getRegister()">Daftar dulu bro</button>
+        </form>
+        <!--  -->
+      </div>
+
+  </div>
+  <script src="./assets/login.js"></script>
+  <script src="./assets/tab.js"></script>
+
+  </body>
+</html>
